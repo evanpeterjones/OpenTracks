@@ -15,6 +15,7 @@ import androidx.core.app.TaskStackBuilder;
 
 import de.dennisguse.opentracks.R;
 import de.dennisguse.opentracks.TrackListActivity;
+import de.dennisguse.opentracks.TrackRecordedActivity;
 import de.dennisguse.opentracks.data.models.Distance;
 import de.dennisguse.opentracks.data.models.DistanceFormatter;
 import de.dennisguse.opentracks.data.models.SpeedFormatter;

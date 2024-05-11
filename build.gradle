@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
 
 buildscript {
     repositories {
@@ -7,6 +8,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.2.1'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10'
     }
 }
 
@@ -56,6 +58,15 @@ android {
     buildFeatures {
         viewBinding true
         buildConfig true
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.3"
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
     }
 
     androidResources {
@@ -125,7 +136,26 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.compose.material3:material3:1.1.2'
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
+
+    implementation 'androidx.compose.ui:ui:1.5.4'
+    // Tooling support (Previews, etc.)
+    debugImplementation 'androidx.compose.ui:ui-tooling:1.5.4'
+    implementation 'androidx.compose.ui:ui-tooling-preview:1.5.4'
+    // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
+    implementation 'androidx.compose.foundation:foundation:1.5.4'
+    // Material Design
+    implementation 'androidx.compose.material:material:1.5.4'
+    // Material design icons
+    implementation 'androidx.compose.material:material-icons-core:1.5.4'
+    implementation 'androidx.compose.material:material-icons-extended:1.5.4'
+    // Integration with observables
+    implementation 'androidx.compose.runtime:runtime-livedata:1.5.4'
+    implementation 'androidx.compose.runtime:runtime-rxjava2:1.5.4'
+    implementation "androidx.activity:activity-compose:1.3.0-alpha03"
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.preference:preference:1.2.1'

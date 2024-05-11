@@ -13,6 +13,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import java.util.List;
 
 import de.dennisguse.opentracks.AbstractActivity;
+import de.dennisguse.opentracks.TrackDateListActivity;
 import de.dennisguse.opentracks.TrackListActivity;
 import de.dennisguse.opentracks.databinding.IntroductionBinding;
 import de.dennisguse.opentracks.settings.PreferencesUtils;
@@ -29,7 +30,7 @@ public class IntroductionActivity extends AbstractActivity {
         super.onCreate(savedInstanceState);
 
         if (!PreferencesUtils.shouldShowIntroduction()) {
-            startActivity(new Intent(this, TrackListActivity.class));
+            startActivity(new Intent(this, TrackDateListActivity.class));
             finish();
         }
 
@@ -39,7 +40,7 @@ public class IntroductionActivity extends AbstractActivity {
                 viewBinding.introductionViewPager.setCurrentItem(nextItemId);
             } else {
                 PreferencesUtils.setShowIntroduction(false);
-                startActivity(IntentUtils.newIntent(this, TrackListActivity.class));
+                startActivity(IntentUtils.newIntent(this, TrackDateListActivity.class));
                 finish();
             }
         });

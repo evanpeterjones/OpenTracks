@@ -333,7 +333,7 @@ limitations under the License.
         </activity>
 
         <activity
-            android:name=".TrackListActivity"
+            android:name=".TrackDateListActivity"
             android:exported="true"
             android:launchMode="singleTop">
             <intent-filter>

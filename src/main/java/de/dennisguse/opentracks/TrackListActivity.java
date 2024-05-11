@@ -37,6 +37,7 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -149,6 +150,10 @@ public class TrackListActivity extends AbstractTrackDeleteActivity implements Co
         requestRequiredPermissions();
 
         recordingStatusConnection = new TrackRecordingServiceConnection(bindChangedCallback);
+        /*
+        trackRecordingServiceConnection = new TrackRecordingServiceConnection(bindChangedCallback);
+        viewBinding.trackList = RecyclerView<>
+         */
 
         viewBinding.aggregatedStatsButton.setOnClickListener((view) -> startActivity(IntentUtils.newIntent(this, AggregatedStatisticsActivity.class)));
         viewBinding.sensorStartButton.setOnClickListener((view) -> {

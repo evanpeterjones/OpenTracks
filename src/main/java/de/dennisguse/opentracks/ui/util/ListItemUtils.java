@@ -115,7 +115,7 @@ public class ListItemUtils {
     public static void setDateAndTime(Context context, TextView dateView, TextView timeView, Instant time, ZoneOffset timeZone) {
         OffsetDateTime offsetDateTime = OffsetDateTime.ofInstant(time, timeZone);
         String dateContent = StringUtils.formatDateTodayRelative(context, offsetDateTime);
-        String pattern = "HH:mm";
+        String pattern = "hh:mm a";
         if (!offsetDateTime.getOffset().equals(OffsetDateTime.now().getOffset())) {
             pattern = "HH:mm x";
         }

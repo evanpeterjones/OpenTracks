@@ -8,61 +8,76 @@
     android:padding="8dp">
 
     <!-- Icon -->
+
+    <!-- Name -->
+
+    <!-- Date -->
+
+    <!-- Total time and distance -->
+
+    <!-- Marker Count Icon -->
+
+    <!-- Marker count -->
+
     <ImageView
         android:id="@+id/track_list_item_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
         android:contentDescription="@string/image_track"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_activity_bike_24dp" />
 
-    <!-- Name -->
     <TextView
         android:id="@+id/track_list_item_name"
         style="?attr/textAppearanceBody1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
         android:singleLine="true"
         app:layout_constraintStart_toEndOf="@id/track_list_item_icon"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Main Text" />
 
-    <!-- Date -->
     <TextView
         android:id="@+id/track_list_item_date"
         style="?attr/textAppearanceBodySmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="328dp"
         android:gravity="end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="2022-02-17" />
 
-    <!-- Total time and distance -->
     <TextView
         android:id="@+id/track_list_item_time_distance"
         style="?attr/textAppearanceBodySmall"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@id/track_list_item_name"
         app:layout_constraintTop_toBottomOf="@id/track_list_item_name"
         tools:text="50:43 (50.00km)" />
 
-    <!-- Marker Count Icon -->
     <ImageView
         android:id="@+id/track_list_item_marker_count_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:contentDescription="@string/image_marker_count"
         android:scaleType="centerInside"
         android:src="@drawable/ic_marker_show_24dp"
         app:layout_constraintBottom_toBottomOf="@id/track_list_item_time_distance"
         app:layout_constraintStart_toEndOf="@id/track_list_item_time_distance"
-        app:layout_constraintTop_toBottomOf="@id/track_list_item_name" />
+        app:layout_constraintTop_toBottomOf="@id/track_list_item_name"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <!-- Marker count -->
     <TextView
         android:id="@+id/track_list_item_marker_count"
         style="?attr/textAppearanceBodySmall"
@@ -74,17 +89,21 @@
         tools:text="2" />
 
     <!-- Time -->
+
+    <!-- Second row barrier -->
+
     <TextView
         android:id="@+id/track_list_item_time"
         style="?attr/textAppearanceBodySmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="292dp"
         android:gravity="end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/track_list_item_name"
         tools:text="10:10:10" />
 
-    <!-- Second row barrier -->
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/track_list_item_barrier"
         android:layout_width="wrap_content"
@@ -93,24 +112,29 @@
         app:constraint_referenced_ids="track_list_item_time_distance,track_list_item_marker_count_icon,track_list_item_marker_count,track_list_item_time" />
 
     <!-- Category and description -->
+
+    <!-- Bottom Line -->
+
     <TextView
         android:id="@+id/track_list_item_category_description"
         style="?attr/textAppearanceBodySmall"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:ellipsize="end"
         android:maxLines="2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/track_list_item_name"
         app:layout_constraintTop_toBottomOf="@id/track_list_item_barrier"
         tools:text="Description" />
 
-    <!-- Bottom Line -->
     <View
         android:id="@+id/marker_list_item_bottom_line"
         style="@style/HorizontalLine"
-        android:layout_marginBottom="0dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/track_list_item_category_description" />
 
